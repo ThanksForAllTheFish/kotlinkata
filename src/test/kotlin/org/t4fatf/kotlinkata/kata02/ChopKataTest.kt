@@ -1,8 +1,8 @@
-package org.t4fatf.kotlinkata
+package org.t4fatf.kotlinkata.kata02
 
 import org.assertj.core.api.Assertions
 import org.junit.gen5.api.Test
-import org.t4atf.kotlinkata.ChopKata
+import org.t4atf.kotlinkata.kata02.ChopKata
 
 class ChopKataTest {
     val source = IntRange(0,10000)
@@ -14,15 +14,15 @@ class ChopKataTest {
     }
 
     @Test fun iterativeDeferredCheckedTest() {
-        verification(ChopKata(ChopKata.ITERATIVE_DEFERRED))
+        verification(ChopKata(ChopKata.Companion.ITERATIVE_DEFERRED))
     }
 
     @Test fun recursiveImplementationTest() {
-        verification(ChopKata(ChopKata.RECURSIVE))
+        verification(ChopKata(ChopKata.Companion.RECURSIVE))
     }
 
     @Test fun nativeImplementationTest() {
-        verification(ChopKata(ChopKata.NATIVE))
+        verification(ChopKata(ChopKata.Companion.NATIVE))
     }
 
     private fun verification(algorithm: ChopKata) {

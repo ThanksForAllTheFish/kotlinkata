@@ -1,4 +1,4 @@
-package org.t4atf.kotlinkata
+package org.t4atf.kotlinkata.kata02
 
 class ChopKata {
 
@@ -45,7 +45,7 @@ class ChopKata {
         }
 
         val RECURSIVE = fun (value: Int, source: Array<Int>): Int {
-            return step(value, source, source.size-1, 0)
+            return step(value, source, source.size - 1, 0)
         }
 
         tailrec
@@ -56,14 +56,14 @@ class ChopKata {
             val elem = source[curr]
 
 
-            if(elem < value) return step(value, source, up, curr+1)
-            if(elem > value) return step(value, source, curr-1, down)
+            if(elem < value) return step(value, source, up, curr + 1)
+            if(elem > value) return step(value, source, curr - 1, down)
 
             return curr
         }
     }
 
-    val algorithm: (Int, Array<Int>) -> Int
+    val algorithm : (Int, Array<Int>) -> Int
 
     constructor() : this(DEFAULT_ITERATIVE)
 
@@ -71,7 +71,5 @@ class ChopKata {
         this.algorithm = algorithm
     }
 
-    fun binarySearch(value: Int, source: Array<Int>): Int {
-        return algorithm.invoke(value, source)
-    }
+    fun binarySearch(value: Int, source: Array<Int>) = algorithm.invoke(value, source)
 }

@@ -1,8 +1,8 @@
-package org.t4fatf.kotlinkata
+package org.t4fatf.kotlinkata.kata02
 
 import org.assertj.core.api.Assertions
 import org.jetbrains.spek.api.Spek
-import org.t4atf.kotlinkata.ChopKata
+import org.t4atf.kotlinkata.kata02.ChopKata
 
 class ChopKataSpekTest: Spek() {
     init {
