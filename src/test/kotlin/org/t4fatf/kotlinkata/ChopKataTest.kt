@@ -1,7 +1,7 @@
 package org.t4fatf.kotlinkata
 
 import org.assertj.core.api.Assertions
-import org.junit.Test
+import org.junit.gen5.api.Test
 import org.t4atf.kotlinkata.ChopKata
 
 class ChopKataTest {
