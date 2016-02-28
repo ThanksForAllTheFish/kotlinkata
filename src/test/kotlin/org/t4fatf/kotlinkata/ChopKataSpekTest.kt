@@ -18,13 +18,13 @@ class ChopKataSpekTest: Spek() {
                 }
             }
             on("the value 3") {
-                var index = -1
+                var index = -3
                 it("should return the index $index") {
                     Assertions.assertThat(algorithm.binarySearch(3, source)).isEqualTo(index)
                 }
             }
             on("the value 11000") {
-                var index = -1
+                var index = -5002
                 it("should return the index $index") {
                     Assertions.assertThat(algorithm.binarySearch(11000, source)).isEqualTo(index)
                 }

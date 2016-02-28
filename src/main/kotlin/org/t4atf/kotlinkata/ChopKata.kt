@@ -18,11 +18,11 @@ class ChopKata {
                 }
             }
 
-            return -1
+            return -down-1
         }
 
         val ITERATIVE_DEFERRED = fun (value: Int, source: Array<Int>): Int {
-            var up = source.size -1
+            var up = source.size - 1
             var down = 0
             while (up > down) {
                 var curr = (up + down) / 2
@@ -37,7 +37,7 @@ class ChopKata {
             if(down == up && source[down] == value)
                 return down
 
-            return -1
+            return if(down == source.size -1) -down-2 else -down-1
         }
 
         val NATIVE = fun (value: Int, source: Array<Int>): Int {
@@ -50,7 +50,7 @@ class ChopKata {
 
         tailrec
         private fun step(value: Int, source: Array<Int>, up: Int, down: Int): Int {
-            if(up < down) return -1
+            if(up < down) return -down-1
 
             val curr = (up + down) / 2
             val elem = source[curr]

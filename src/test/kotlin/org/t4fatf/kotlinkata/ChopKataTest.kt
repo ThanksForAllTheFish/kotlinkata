@@ -27,11 +27,11 @@ class ChopKataTest {
 
     private fun verification(algorithm: ChopKata) {
         Assertions.assertThat(algorithm.binarySearch(10, source)).isEqualTo(5)
-        Assertions.assertThat(algorithm.binarySearch(7, source)).isLessThanOrEqualTo(-1)
-        Assertions.assertThat(algorithm.binarySearch(-1, source)).isLessThanOrEqualTo(-1)
+        Assertions.assertThat(algorithm.binarySearch(7, source)).isEqualTo(-5)
+        Assertions.assertThat(algorithm.binarySearch(-1, source)).isEqualTo(-1)
         Assertions.assertThat(algorithm.binarySearch(9000, source)).isEqualTo(4500)
         Assertions.assertThat(algorithm.binarySearch(10000, source)).isEqualTo(5000)
         Assertions.assertThat(algorithm.binarySearch(0, source)).isEqualTo(0)
-        Assertions.assertThat(algorithm.binarySearch(11000, source)).isLessThanOrEqualTo(-1)
+        Assertions.assertThat(algorithm.binarySearch(11000, source)).isEqualTo(-5002)
     }
 }
