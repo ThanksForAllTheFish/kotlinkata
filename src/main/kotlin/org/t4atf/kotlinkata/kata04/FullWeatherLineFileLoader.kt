@@ -12,7 +12,7 @@ class FullWeatherLineFileLoader : FileLoader<List<WeatherLine>> {
             var i = 0
             while (scanner.hasNext()) {
                 val line = scanner.next();
-                if(i > 1 && line.isNotBlank()) {
+                if(i > 1) {
                     list.add(toWeatherLine(line.split(" ").filterNot { s -> s.isBlank() }))
                 }
                 i++
