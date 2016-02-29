@@ -13,7 +13,8 @@ class FullWeatherLineFileLoaderTest {
         Assertions.assertThat(list).containsExactly(
                 WeatherLine(1, 88.0, 59.0, 74.0),
                 WeatherLine(2, 79.0, 63.0, 71.0),
-                WeatherLine(3, 77.0, 55.2, 66.0)
+                WeatherLine(3, 77.0, 55.2, 66.0),
+                WeatherLine(4, 77.0, 61.0, 69.0)
         )
     }
 }
