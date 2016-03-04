@@ -1,8 +1,9 @@
 package org.t4atf.kotlinkata.kata04
 
 fun main(args: Array<String>) {
-    application(munging, load("kata04/weather.dat"))
+    application(weatherMunging, load<WeatherLine>("kata04/weather.dat").invoke(weatherSelector, weatherDomainMapper), weatherOutFormatter)
+    application(footballMunging, load<FootballLine>("kata04/football.dat").invoke(footballSelector, footballDomainMapper), footballOutFormatter)
 }
 
-private fun application(munging: (List<WeatherLine>) -> List<Pair<Int, Double>>, loader: (selector: (String) -> Boolean, domainMapper: (String) -> WeatherLine) -> List<WeatherLine>) =
-        print(munging, loader.invoke(selector, domainMapper), System.out)
+private fun <T, L, R> application(munging: (List<T>) -> List<Pair<L, R>>, loader: List<T>, outFormatter: (L, R) -> String) =
+        print(munging.invoke(loader), System.out, outFormatter)
