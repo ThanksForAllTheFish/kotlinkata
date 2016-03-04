@@ -3,12 +3,11 @@ package org.t4atf.kotlinkata.kata04
 import org.assertj.core.api.Assertions
 import org.junit.gen5.api.Test
 
-class FullWeatherLineFileLoaderTest {
-
-    val loader = FullWeatherLineFileLoader()
+class WeatherTest {
 
     @Test fun testLoad() {
-        val list = loader.load("kata04/weather.dat")
+        val list = load<WeatherLine>("kata04/weather.dat")
+                .invoke(selector, domainMapper)
 
         Assertions.assertThat(list).containsExactly(
                 WeatherLine(1, 88.0, 59.0, 74.0),
